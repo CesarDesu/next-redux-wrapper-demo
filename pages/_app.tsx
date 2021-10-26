@@ -1,6 +1,6 @@
 import React from "react";
 import App, { AppInitialProps, AppContext } from "next/app";
-import { wrapper } from "../redux/store/store";
+import wrapper from "../redux/store/store";
 
 class WrappedApp extends App<AppInitialProps> {
   public static getInitialProps = async ({ Component, ctx }: AppContext) => {
