@@ -15,4 +15,6 @@ const composeEnhancers =
 export const makeStore: MakeStore<IAppState> = (context: Context) =>
   createStore(appReducer, composeEnhancers(applyMiddleware(...middleware)));
 
-export const wrapper = createWrapper<IAppState>(makeStore, { debug: true });
+const wrapper = createWrapper<IAppState>(makeStore, { debug: true });
+
+export default wrapper;
