@@ -5,7 +5,7 @@ import { wrapper } from "../redux/store/store";
 class WrappedApp extends App<AppInitialProps> {
   public static getInitialProps = async ({ Component, ctx }: AppContext) => {
     // Keep in mind that this will be called twice on server, one for page and second for error page
-    // ctx.store.dispatch({ type: "APP", payload: "was set in _app" });
+    ctx.store.dispatch({ type: "APP", payload: "was set in _app" });
 
     return {
       pageProps: {
