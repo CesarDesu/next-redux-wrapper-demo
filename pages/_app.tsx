@@ -1,7 +1,6 @@
-import React, { FC } from "react";
+import React from "react";
 import App, { AppInitialProps, AppContext } from "next/app";
 import { wrapper } from "../redux/store/store";
-import { NextPageContext } from "next";
 
 class WrappedApp extends App<AppInitialProps> {
   public static getInitialProps = async ({ Component, ctx }: AppContext) => {

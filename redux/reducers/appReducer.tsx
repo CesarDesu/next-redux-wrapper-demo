@@ -1,4 +1,3 @@
-import { AnyAction } from "redux";
 import { HYDRATE } from "next-redux-wrapper";
 
 export interface IAppState {
@@ -11,7 +10,12 @@ const initState: IAppState = {
   page: "init",
 };
 
-export const appReducer = (state: IAppState = initState, action: AnyAction) => {
+export type AppAction =
+  | { type: "APP"; payload: IAppState }
+  | { type: typeof HYDRATE; payload: IAppState }
+  | { type: "PAGE"; payload: IAppState };
+
+export const appReducer = (state: IAppState = initState, action: AppAction) => {
   switch (action.type) {
     case HYDRATE:
       if (action.payload.app === "init") delete action.payload.app;
